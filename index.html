@@ -2,75 +2,57 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>stef.ie</title>
-    <meta name="description" content="stef.ie" />
-    <meta name="author" content="Stefan Kelly O'Rourke" />
     <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests"
     />
-    <link rel="stylesheet" media="screen" href="css/style.css" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stefan · stef.ie</title>
+    <meta name="description" content="Stefan Kelly O'Rourke — coolest kid in Dublin." />
+    <meta name="author" content="Stefan Kelly O'Rourke" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#423f3f" />
+    <link rel="canonical" href="https://stef.ie/" />
 
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png" />
     <link
-      rel="apple-touch-icon"
-      sizes="114x114"
-      href="/apple-icon-114x114.png"
+      rel="preload"
+      href="css/xxii_ultimate-black-metal-webfont.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
-    <link
-      rel="apple-touch-icon"
-      sizes="120x120"
-      href="/apple-icon-120x120.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="144x144"
-      href="/apple-icon-144x144.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="152x152"
-      href="/apple-icon-152x152.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/apple-icon-180x180.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="/android-icon-192x192.png"
-    />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/manifest.json" />
-    <meta name="msapplication-TileColor" content="#ffffff" />
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
-    <meta name="theme-color" content="#ffffff" />
+    <link rel="preload" href="image/ghost.png" as="image" />
+    <link rel="stylesheet" href="css/style.css" />
 
+    <link rel="icon" href="/image/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/image/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/image/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/image/android-icon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/image/apple-icon-180x180.png" />
+    <link rel="manifest" href="/image/manifest.json" />
+    <meta name="msapplication-TileColor" content="#423f3f" />
+    <meta name="msapplication-TileImage" content="/image/ms-icon-144x144.png" />
+    <meta name="msapplication-config" content="/image/browserconfig.xml" />
+
+    <meta property="og:type" content="website" />
     <meta property="og:title" content="stef.ie" />
     <meta property="og:site_name" content="stef.ie" />
     <meta property="og:url" content="https://stef.ie/" />
     <meta property="og:description" content="A lil webpage..." />
+    <meta property="og:image" content="https://stef.ie/image/ms-icon-310x310.png" />
+    <meta name="twitter:card" content="summary" />
+
+    <script src="js/particles.min.js" defer></script>
+    <script src="js/app.js" defer></script>
   </head>
   <body>
-    <div class="panel" style="display: block">
+    <main class="panel">
       <h1>STEFAN</h1>
-      <span class="r-version">v0.0.3</span>
-      <h2>coolest kid in Dublin..</h2>
-    </div>
+      <span class="r-version">v0.0.4</span>
+      <p>coolest kid in Dublin..</p>
+    </main>
 
-    <!-- particles.js container -->
-    <div id="particles-js"></div>
-
-    <!-- scripts -->
-    <script src="js/particles.js"></script>
-    <script src="js/app.js"></script>
+    <div id="particles-js" aria-hidden="true"></div>
   </body>
 </html>
