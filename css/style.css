@@ -105,6 +105,8 @@ body {
 #particles-js {
   position: fixed;
   inset: 0;
+  /* Keep pinch-zoom but stop rapid taps from triggering double-tap zoom */
+  touch-action: manipulation;
 }
 
 #particles-js canvas {

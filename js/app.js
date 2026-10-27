@@ -31,7 +31,7 @@
       },
     },
     interactivity: {
-      detect_on: "window",
+      detect_on: "canvas",
       events: {
         onhover: { enable: !reduceMotion, mode: "bubble" },
         onclick: { enable: true, mode: "push" },
@@ -45,7 +45,7 @@
     retina_detect: true,
   });
 
-  window.addEventListener("click", function () {
+  document.getElementById("particles-js").addEventListener("click", function () {
     var pJS = window.pJSDom[0] && window.pJSDom[0].pJS;
     if (!pJS) return;
     var extra = pJS.particles.array.length - MAX_PARTICLES;
