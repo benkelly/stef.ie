@@ -1,157 +1,5 @@
 /* =============================================================================
-   HTML5 CSS Reset Minified - Eric Meyer
-   ========================================================================== */
-
-html,
-body,
-div,
-span,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-abbr,
-address,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-samp,
-small,
-strong,
-sub,
-sup,
-var,
-b,
-i,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-}
-body {
-  line-height: 1;
-}
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-nav ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: none;
-}
-a {
-  margin: 0;
-  padding: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-  text-decoration: none;
-}
-mark {
-  background-color: #ff9;
-  color: #000;
-  font-style: italic;
-  font-weight: bold;
-}
-del {
-  text-decoration: line-through;
-}
-abbr[title],
-dfn[title] {
-  border-bottom: 1px dotted;
-  cursor: help;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
-}
-input,
-select {
-  vertical-align: middle;
-}
-li {
-  list-style: none;
-}
-
-/* =============================================================================
-   My CSS
+   Base
    ========================================================================== */
 
 @font-face {
@@ -160,107 +8,111 @@ li {
     url("xxii_ultimate-black-metal-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
-/*
-	pannel
-*/
 
-.panel {
-  font-size: 1.3em;
-  position: absolute;
-  z-index: 10;
-  width: 200px;
-  height: 220px;
-  background: #eee;
-  top: 50%;
-  left: 50%;
-  margin: -110px 0 0 -100px;
-  padding: 20px;
-  border-radius: 4px;
+:root {
+  --bg: #423f3f;
+  --panel-bg: rgba(238, 238, 238, 0.92);
+  --text: #222;
+  --muted: #555;
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  z-index: 100;
-}
-
-.panel h1 {
-  font-family: "xxii_ultimate-blacfallenangel", Fallback, sans-serif;
-  font-size: 3.6em;
-  font-weight: 700;
-  text-align: center;
-  color: #222;
-  margin-top: -4px;
-}
-.panel h2 {
-  font-weight: 400;
-  font-size: 0.8em;
-  margin-bottom: 16px;
-  text-align: center;
-  line-height: 1.3em;
-}
-.panel .r-version {
-  display: block;
-  margin-bottom: 7px;
-  text-align: center;
-  font-size: 0.75em;
-}
-
-/* ---- base ---- */
-
-html,
-body {
-  height: 100%;
-}
-
-body {
-  display: flex;
-  align-items: center;
-  background-color: #f9f9f9;
-}
-
-.container {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 50px;
-  background-color: #fff;
-  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0 0 rgba(0, 0, 0, 0.02);
-}
-
-.background {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
 }
 
 html,
 body {
-  width: 100%;
   height: 100%;
-  background: #111;
+  margin: 0;
 }
 
 html {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  font: normal 75% Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 1rem/1.4 system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+    sans-serif;
+  overflow: hidden;
 }
 
-canvas {
+/* =============================================================================
+   Panel
+   ========================================================================== */
+
+.panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  width: min(90vw, 280px);
+  padding: 1.75rem 1.5rem 1.5rem;
+  background: var(--panel-bg);
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35), 0 2px 6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: panel-in 0.6s ease-out both;
+}
+
+@supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .panel {
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+  }
+}
+
+.panel h1 {
+  margin: 0;
+  font-family: "xxii_ultimate-blacfallenangel", Georgia, serif;
+  font-size: clamp(3rem, 14vw, 4.25rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.panel .r-version {
   display: block;
-  vertical-align: bottom;
+  margin: 0.75rem 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--muted);
 }
 
-/* ---- particles.js container ---- */
+.panel p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 12px));
+  }
+}
+
+/* =============================================================================
+   particles.js container
+   ========================================================================== */
 
 #particles-js {
-  width: 100%;
-  height: 100%;
-  background-color: #423f3f;
-  background-image: url("");
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
+  position: fixed;
+  inset: 0;
+}
+
+#particles-js canvas {
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel {
+    animation: none;
+  }
 }
